@@ -376,7 +376,7 @@ export default function Home() {
                   }
                   className={styles.input}
                 />
-                <button className={styles.button1} onClick={_addLiquidity}>
+                <button className={styles.button} onClick={_addLiquidity}>
                   Add
                 </button>
               </div>
@@ -402,7 +402,7 @@ export default function Home() {
                   {/* Convert the BigNumber to string using the formatEther function from ethers.js */}
                   {`You will need ${utils.formatEther(addPeachTokens)} Peach Tokens`}
                 </div>
-                <button className={styles.button1} onClick={_addLiquidity}>
+                <button className={styles.button} onClick={_addLiquidity}>
                   Add
                 </button>
               </div>
@@ -424,7 +424,7 @@ export default function Home() {
                 {`You will get ${utils.formatEther(removePeach)} Peach
               Tokens and ${utils.formatEther(removeEther)} Eth`}
               </div>
-              <button className={styles.button1} onClick={_removeLiquidity}>
+              <button className={styles.button} onClick={_removeLiquidity}>
                 Remove
               </button>
             </div>
@@ -470,7 +470,7 @@ export default function Home() {
                   tokenToBeReceivedAfterSwap
                 )} Eth`}
           </div>
-          <button className={styles.button1} onClick={_swapTokens}>
+          <button className={styles.button} onClick={_swapTokens}>
             Swap
           </button>
         </div>
@@ -487,11 +487,11 @@ export default function Home() {
       </Head>
       <div className={styles.main}>
         <div>
-          <h1 className={styles.title}>Welcome to PeachSwap!</h1>
+          <h1 className={styles.title}>PeachSwap</h1>
           <div className={styles.description}>
-            Exchange Ethereum &#60;&#62; Peach Tokens
+            Exchange Ethereum for Peach Tokens and vice versa!
           </div>
-          <div>
+          <div className={styles.topbuttons}>
             <button
               className={styles.button}
               onClick={() => {
@@ -511,14 +511,14 @@ export default function Home() {
           </div>
           {renderButton()}
         </div>
-        <div>
-          <img className={styles.image} src="./swap.png" />
-        </div>
+        {/*<div>
+          <img className={styles.image} src="./swap.png" /> 
+        </div>*/}
       </div>
-
+      {/*
       <footer className={styles.footer}>
         Made with &#10084; by Aruzhan and Nazira
-      </footer>
+        </footer> */}
     </div>
   );
 }

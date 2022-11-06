@@ -1,12 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins&display=swap');
 .main {
   min-height: 90vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Poppins", "Times New Roman", monospace;
 }
-
+/*
 .footer {
   display: flex;
   padding: 2rem 0;
@@ -20,7 +21,7 @@
   height: 50%;
   margin-left: 20%;
 }
-
+*/
 .input {
   width: 200px;
   height: 100%;
@@ -31,26 +32,37 @@
 }
 
 .title {
-  font-size: 2rem;
-  margin: 2rem 0;
+  font-size: 6rem;
+  font-family: 'Abril Fatface', 'Times New Roman';
 }
 
 .description {
   line-height: 1;
-  margin: 2%;
   font-size: 1.2rem;
 }
 
+.topbuttons {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
 .button {
-  border-radius: 4px;
-  background-color: purple;
-  border: none;
-  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 2rem;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
   font-size: 15px;
-  padding: 5px;
-  width: 100px;
-  cursor: pointer;
-  margin: 2%;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  backface-visibility: hidden;
+  border: 0.3rem solid transparent;
+  border-radius: 1rem;
+  width: 90px;
+  margin: 10px;
 }
 
 .inputDiv {
@@ -71,17 +83,6 @@
   margin: 2%;
 }
 
-.button1 {
-  border-radius: 4px;
-  background-color: blue;
-  border: none;
-  color: #ffffff;
-  font-size: 15px;
-  padding: 5px;
-  width: 100px;
-  cursor: pointer;
-  margin: 2%;
-}
 @media (max-width: 1000px) {
   .main {
     width: 100%;

@@ -31,7 +31,7 @@ export const getEtherBalance = async (provider, address, contract = false) => {
  * getCDTokensBalance: Retrieves the Crypto Dev tokens in the account
  * of the provided `address`
  */
-export const getCDTokensBalance = async (provider, address) => {
+export const getPeachTokensBalance = async (provider, address) => {
   try {
     const tokenContract = new Contract(
       TOKEN_CONTRACT_ADDRESS,
@@ -67,7 +67,7 @@ export const getLPTokensBalance = async (provider, address) => {
  * getReserveOfCDTokens: Retrieves the amount of CD tokens in the
  * exchange contract address
  */
-export const getReserveOfCDTokens = async (provider) => {
+export const getReserveOfPeachTokens = async (provider) => {
   try {
     const exchangeContract = new Contract(
       EXCHANGE_CONTRACT_ADDRESS,
