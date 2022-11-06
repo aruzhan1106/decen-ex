@@ -16,7 +16,7 @@ contract Exchange is ERC20 {
     Returns the amount of `Crypto Dev Tokens` held by the contract
     **/
     function getReserve() public view returns (uint) {
-        return ERC20(cryptoDevTokenAddress).balanceOf(address(this));
+        return ERC20(peachTokenAddress).balanceOf(address(this));
     }
 
     // Adds liquidity to the exchange.
@@ -90,15 +90,15 @@ contract Exchange is ERC20 {
         // = (amount of LP tokens that user wants to withdraw) / (total supply of LP tokens)
         // Then by some maths -> (Crypto Dev sent back to the user)
         // = (current Crypto Dev token reserve * amount of LP tokens that user wants to withdraw) / (total supply of LP tokens)
-        uint cryptoDevTokenAmount = (getReserve() * _amount)/ _totalSupply;
+        uint peachTokenAmount = (getReserve() * _amount)/ _totalSupply;
         // Burn the sent LP tokens from the user's wallet because they are already sent to
         // remove liquidity
         _burn(msg.sender, _amount);
         // Transfer `ethAmount` of Eth from the contract to the user's wallet
         payable(msg.sender).transfer(ethAmount);
         // Transfer `cryptoDevTokenAmount` of Crypto Dev tokens from the contract to the user's wallet
-        ERC20(cryptoDevTokenAddress).transfer(msg.sender, cryptoDevTokenAmount);
-        return (ethAmount, cryptoDevTokenAmount);
+        ERC20(peachTokenAddress).transfer(msg.sender, peachTokenAmount);
+        return (ethAmount, peachTokenAmount);
     }
 
         /**
